@@ -52,14 +52,17 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
             [FromRoute] string userId,
             [FromRoute] string id)
         {
-            return Ok();
+            var response = await _mediator.Send(new UserQuery(id));
+            return Ok(response);
         }
 
 
         [HttpPost]
         [ProducesResponseType(typeof(CreateUserResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> PostAsync(CreateUserRequest request)
+        public async Task<IActionResult> PostAsync(
+            [FromRoute] string userId,
+            CreateUserRequest request)
         {
             var response = await _mediator.Send(new CreateUserCommand(request.Email,
                                                                              request.Name,
@@ -76,16 +79,29 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(UpdateUserResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> PutAsync(string id, UpdateUserRequest request)
+        public async Task<IActionResult> PutAsync(
+            [FromRoute] string userId,
+            string id,
+            UpdateUserRequest request)
         {
+            var response = await _mediator.Send(new UpdateUserCommand(id,
+                                                                        request.Name,
+                                                                        request.Surname,
+                                                                        request.CityId,
+                                                                        request.BirthDate,
+                                                                        request.Weight,
+                                                                        request.Height));
             return Ok();
         }
 
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> DeleteAsync(string Id)
+        public async Task<IActionResult> DeleteAsync(
+            [FromRoute] string userId,
+            string Id)
         {
+            var response = await _mediator.Send(new DeleteUserCommand(Id));
             return Ok();
         }
     }
