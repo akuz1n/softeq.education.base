@@ -4,11 +4,11 @@ namespace TrialsSystem.UsersService.Api.Application.Commands
 {
     public class DeleteCityCommand : IRequest
     {
-        public string Name { get; set; }
+        public string Id { get; set; }
 
-        public DeleteCityCommand(string name)
+        public DeleteCityCommand(string id)
         {
-            Name = name;
+            Id = id;
         }
     }
 }

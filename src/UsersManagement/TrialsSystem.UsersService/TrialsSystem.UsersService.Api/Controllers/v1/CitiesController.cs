@@ -42,37 +42,37 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
         }
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(CreateCityResponse), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PostAsync(
             [FromRoute] string userId,
-            string name)
+            CreateCityRequest request)
         {
-            var response = await _mediator.Send(new CreateCityCommand(name));
-            return Ok();
+            var response = await _mediator.Send(new CreateCityCommand(request.Name));
+            return Ok(response);
 
         }
 
-        [HttpPut("{name}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpPut("id")]
+        [ProducesResponseType(typeof(UpdateCityResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PutAsync(
             [FromRoute] string userId,
-            string name,
-            string newName)
+            string id,
+            UpdateCityRequest request)
         {
-            var response = await _mediator.Send(new UpdateCityCommand(name, newName));
-            return Ok();
+            var response = await _mediator.Send(new UpdateCityCommand(id, request.Name));
+            return Ok(response);
         }
 
-        [HttpDelete("{name}")]
+        [HttpDelete("id")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> DeleteAsync(
             [FromRoute] string userId,
-            string name)
+            string id)
         {
-            var response = await _mediator.Send(new DeleteCityCommand(name));
+            var response = await _mediator.Send(new DeleteCityCommand(id));
             return Ok();
         }
     }
