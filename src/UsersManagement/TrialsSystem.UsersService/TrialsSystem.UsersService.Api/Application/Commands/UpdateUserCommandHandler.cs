@@ -8,6 +8,11 @@ namespace TrialsSystem.UsersService.Api.Application.Commands
     {
         public async Task<UpdateUserResponse> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
+            if (request.Id == "42")
+            {
+                throw new TrialUserNotFondException(request.Id);
+            }
+
             return await Task.FromResult(new UpdateUserResponse());
         }
     }
