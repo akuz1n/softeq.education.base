@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using TrialsSystem.UsersService.Api.Application.Commands;
 using TrialsSystem.UsersService.Api.Application.Queries;
@@ -14,10 +15,16 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
     public class CitiesController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly IValidator<CreateCityRequest> _createCityValidator;
+        private readonly IValidator<UpdateCityRequest> _updateCityValidator;
 
-        public CitiesController(IMediator mediator)
+        public CitiesController(IMediator mediator,
+            IValidator<CreateCityRequest> createCityValidator,
+            IValidator<UpdateCityRequest> updateCityValidator)
         {
             _mediator = mediator;
+            _createCityValidator = createCityValidator;
+            _updateCityValidator = updateCityValidator;
         }
 
         /// <summary>
@@ -48,6 +55,12 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
             [FromRoute] string userId,
             CreateCityRequest request)
         {
+            var validationResult = _createCityValidator.Validate(request);
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.ToString());
+            }
+
             var response = await _mediator.Send(new CreateCityCommand(request.Name));
             return Ok(response);
 
@@ -61,6 +74,12 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
             string id,
             UpdateCityRequest request)
         {
+            var validationResult = _updateCityValidator.Validate(request);
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.ToString());
+            }
+
             var response = await _mediator.Send(new UpdateCityCommand(id, request.Name));
             return Ok(response);
         }
