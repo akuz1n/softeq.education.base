@@ -12,7 +12,6 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
     /// Device management controller
     /// </summary>
     [Route("api/v1/{userId}/[controller]")]
-    [ServiceFilter(typeof(UserExceptionFilter))]
     [ApiController]
     public class DevicesController : ControllerBase
     {
