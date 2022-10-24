@@ -48,6 +48,17 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
             return Ok(response);
         }
 
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(GetCityResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> GetAsync(
+            [FromRoute] string userId,
+            [FromRoute] string id)
+        {
+            var response = await _mediator.Send(new CityQuery(id));
+            return Ok(response);
+        }
+
         [HttpPost]
         [ProducesResponseType(typeof(CreateCityResponse), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
