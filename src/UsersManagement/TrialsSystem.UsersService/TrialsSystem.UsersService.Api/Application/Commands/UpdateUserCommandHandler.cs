@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using TrialsSystem.UsersService.Api.Exceptions;
 
 namespace TrialsSystem.UsersService.Api.Application.Commands
 {

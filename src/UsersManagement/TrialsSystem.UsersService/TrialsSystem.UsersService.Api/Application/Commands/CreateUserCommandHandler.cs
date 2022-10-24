@@ -1,5 +1,5 @@
-﻿using System.Reflection.Metadata.Ecma335;
-using MediatR;
+﻿using MediatR;
+using TrialsSystem.UsersService.Api.Exceptions;
 using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
 
 namespace TrialsSystem.UsersService.Api.Application.Commands
@@ -8,6 +8,11 @@ namespace TrialsSystem.UsersService.Api.Application.Commands
     {
         public async Task<CreateUserResponse> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
+            if (1 == 2)
+            {
+                throw new EmailIsTakenException(request.Email);
+            }
+
             return new CreateUserResponse();
         }
     }
