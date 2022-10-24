@@ -7,7 +7,7 @@ namespace TrialsSystem.UsersService.Api.Application.Queries
     {
         public async Task<GetCityResponse> Handle(CityQuery request, CancellationToken cancellationToken)
         {
-            return await Task.FromResult(new GetCityResponse);
+            return await Task.FromResult(new GetCityResponse());
         }
     }
 }
