@@ -3,9 +3,9 @@ using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
 
 namespace TrialsSystem.UsersService.Api.Application.Validation
 {
-    public class EditUserRequestValidator : AbstractValidator<UpdateUserRequest>
+    public class UpdateUserRequestValidator : AbstractValidator<UpdateUserRequest>
     {
-        public EditUserRequestValidator()
+        public UpdateUserRequestValidator()
         {
             RuleFor(u => u.BirthDate)
                 .Must(u => u < DateTime.Now.AddYears(-18)).WithMessage("The participant should be older than 18 years.");

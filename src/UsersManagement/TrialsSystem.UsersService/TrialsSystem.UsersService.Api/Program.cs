@@ -19,7 +19,7 @@ namespace TrialsSystem.UsersService.Api
 
             builder.Services.AddControllers();
 
-            builder.Services.AddValidatorsFromAssemblyContaining<EditUserRequestValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<UpdateUserRequestValidator>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
