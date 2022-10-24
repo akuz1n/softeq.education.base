@@ -110,7 +110,7 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
                                                                         request.BirthDate,
                                                                         request.Weight,
                                                                         request.Height));
-            return Ok();
+            return Ok(response);
         }
 
         [HttpDelete("{id}")]

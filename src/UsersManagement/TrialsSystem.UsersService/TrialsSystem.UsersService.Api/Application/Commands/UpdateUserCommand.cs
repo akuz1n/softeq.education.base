@@ -1,8 +1,9 @@
 ﻿using MediatR;
+using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
 
 namespace TrialsSystem.UsersService.Api.Application.Commands
 {
-    public class UpdateUserCommand : IRequest
+    public class UpdateUserCommand : IRequest<UpdateUserResponse>
     {
         public UpdateUserCommand(string id,
             string name,
