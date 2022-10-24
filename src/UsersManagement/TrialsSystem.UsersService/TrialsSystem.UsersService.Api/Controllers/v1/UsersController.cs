@@ -4,6 +4,7 @@ using MediatR;
 using TrialsSystem.UsersService.Api.Application.Commands;
 using TrialsSystem.UsersService.Api.Application.Queries;
 using TrialsSystem.UsersService.Api.Filters;
+using FluentValidation;
 
 namespace TrialsSystem.UsersService.Api.Controllers.v1
 {
@@ -16,10 +17,16 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
     public class UsersController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly IValidator<CreateUserRequest> _createUserValidator;
+        private readonly IValidator<UpdateUserRequest> _updateUserValidator;
 
-        public UsersController(IMediator mediator)
+        public UsersController(IMediator mediator,
+            IValidator<CreateUserRequest> createUserValidator,
+            IValidator<UpdateUserRequest> updateUserValidator)
         {
             _mediator = mediator;
+            _createUserValidator = createUserValidator;
+            _updateUserValidator = updateUserValidator;
         }
 
         /// <summary>
@@ -64,6 +71,12 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
             [FromRoute] string userId,
             CreateUserRequest request)
         {
+            var validationResult = _createUserValidator.Validate(request);
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.ToString());
+            }
+
             var response = await _mediator.Send(new CreateUserCommand(request.Email,
                                                                              request.Name,
                                                                              request.Surname,
@@ -84,6 +97,12 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
             string id,
             UpdateUserRequest request)
         {
+            var validationResult = _updateUserValidator.Validate(request);
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.ToString());
+            }
+
             var response = await _mediator.Send(new UpdateUserCommand(id,
                                                                         request.Name,
                                                                         request.Surname,
