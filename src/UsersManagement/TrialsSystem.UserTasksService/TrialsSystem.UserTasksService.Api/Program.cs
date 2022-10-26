@@ -2,7 +2,7 @@ using System.Reflection;
 using FluentValidation;
 using MediatR;
 using Microsoft.OpenApi.Models;
-using TrialsSystem.UserTasksService.Api.Application.Validation;
+using TrialsSystem.UserTasksService.Api.Application.UserTask.Validation;
 
 var builder = WebApplication.CreateBuilder(args);
 

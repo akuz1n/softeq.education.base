@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using TrialsSystem.UserTasksService.Api.Application.Commands;
-using TrialsSystem.UserTasksService.Api.Application.Queries;
+using TrialsSystem.UserTasksService.Api.Application.UserTask.Commands;
+using TrialsSystem.UserTasksService.Api.Application.UserTask.Queries;
 using TrialsSystem.UserTasksService.Infrastructure.Models.UserTaskDto;
 
 namespace TrialsSystem.UserTasksService.Api.Controllers.v1

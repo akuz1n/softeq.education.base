@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace TrialsSystem.UserTasksService.Api.Application.Commands
+namespace TrialsSystem.UserTasksService.Api.Application.UserTask.Commands
 {
     public class DeleteUserTaskCommandHandler : IRequestHandler<DeleteUserTaskCommand>
     {

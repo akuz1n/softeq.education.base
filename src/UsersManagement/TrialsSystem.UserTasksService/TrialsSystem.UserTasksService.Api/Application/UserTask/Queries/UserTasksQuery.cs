@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using TrialsSystem.UserTasksService.Infrastructure.Models.UserTaskDto;
 
-namespace TrialsSystem.UserTasksService.Api.Application.Queries
+namespace TrialsSystem.UserTasksService.Api.Application.UserTask.Queries
 {
     public class UserTasksQuery : IRequest<IEnumerable<GetUserTaskResponse>>
     {

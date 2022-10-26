@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
 using TrialsSystem.UserTasksService.Infrastructure.Models.UserTaskDto;
 
-namespace TrialsSystem.UserTasksService.Api.Application.Validation
+namespace TrialsSystem.UserTasksService.Api.Application.UserTask.Validation
 {
-    public class CreateUserTaskRequestValidator : AbstractValidator<CreateUserTaskRequest>
+    public class UpdateUserTaskRequestValidator : AbstractValidator<UpdateUserTaskRequest>
     {
-        public CreateUserTaskRequestValidator()
+        public UpdateUserTaskRequestValidator()
         {
             RuleFor(x => x.Name)
                 .Must(value => !string.IsNullOrWhiteSpace(value))

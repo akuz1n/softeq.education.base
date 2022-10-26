@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using TrialsSystem.UserTasksService.Infrastructure.Models.UserTaskDto;
 
-namespace TrialsSystem.UserTasksService.Api.Application.Commands
+namespace TrialsSystem.UserTasksService.Api.Application.UserTask.Commands
 {
     public class CreateUserTaskCommandHandler : IRequestHandler<CreateUserTaskCommand, CreateUserTaskResponse>
     {
