@@ -1,3 +1,9 @@
+using System.Reflection;
+using FluentValidation;
+using MediatR;
+using Microsoft.OpenApi.Models;
+using TrialsSystem.UserTasksService.Api.Application.Validation;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +12,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddValidatorsFromAssemblyContaining<CreateUserTaskRequestValidator>();
+
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
