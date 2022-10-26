@@ -3,7 +3,7 @@ using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
 
 namespace TrialsSystem.UsersService.Api.Application.Queries
 {
-    public class UsersQuery : IRequest<IEnumerable<GetUsersResponse>>
+    public class UsersQuery : IRequest<IEnumerable<GetUserResponse>>
     {
         public int? Take { get; }
 

@@ -3,15 +3,15 @@ using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
 
 namespace TrialsSystem.UsersService.Api.Application.Queries
 {
-    public class UserQueryHandler : IRequestHandler<UserQuery, GetUsersResponse>
+    public class UserQueryHandler : IRequestHandler<UserQuery, GetUserResponse>
     {
         public UserQueryHandler()
         {
         }
 
-        public Task<GetUsersResponse> Handle(UserQuery request, CancellationToken cancellationToken)
+        public Task<GetUserResponse> Handle(UserQuery request, CancellationToken cancellationToken)
         {
-            return Task.FromResult(new GetUsersResponse());
+            return Task.FromResult(new GetUserResponse());
         }
     }
 }
