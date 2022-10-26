@@ -4,7 +4,7 @@ using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using TrialsSystem.UsersService.Api.Application.Validation;
+using TrialsSystem.UsersService.Api.Application.User.Validation;
 using TrialsSystem.UsersService.Api.Filters;
 
 namespace TrialsSystem.UsersService.Api
