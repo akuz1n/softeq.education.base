@@ -1,4 +1,4 @@
-﻿namespace TrialsSystem.UsersService.Infrastructure.Models.UserDTOs
+﻿namespace TrialsSystem.UsersService.Infrastructure.Models.CityDtos
 {
     public class CreateCityRequest
     {

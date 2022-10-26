@@ -1,6 +1,6 @@
 ﻿using System.Reflection.Metadata.Ecma335;
 using MediatR;
-using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
+using TrialsSystem.UsersService.Infrastructure.Models.DeviceDtos;
 
 namespace TrialsSystem.UsersService.Api.Application.Commands
 {

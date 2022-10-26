@@ -1,6 +1,6 @@
 ﻿using TrialsSystem.UsersService.Infrastructure.Models.BaseDTO;
 
-namespace TrialsSystem.UsersService.Infrastructure.Models.UserDTOs
+namespace TrialsSystem.UsersService.Infrastructure.Models.DeviceDtos
 {
     public class GetDeviceResponse
     {

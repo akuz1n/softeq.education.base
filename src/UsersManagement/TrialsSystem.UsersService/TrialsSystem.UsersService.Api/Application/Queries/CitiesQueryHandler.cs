@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using System.Collections.Generic;
-using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
+using TrialsSystem.UsersService.Infrastructure.Models.CityDtos;
 
 namespace TrialsSystem.UsersService.Api.Application.Queries
 {

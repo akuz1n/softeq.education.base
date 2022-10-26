@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
+using TrialsSystem.UsersService.Infrastructure.Models.DeviceDtos;
 
 namespace TrialsSystem.UsersService.Api.Application.Queries
 {
