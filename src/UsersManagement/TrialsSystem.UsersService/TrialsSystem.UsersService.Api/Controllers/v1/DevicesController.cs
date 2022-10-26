@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using TrialsSystem.UsersService.Api.Application.Commands;
-using TrialsSystem.UsersService.Api.Application.Queries;
-using TrialsSystem.UsersService.Api.Filters;
-using FluentValidation;
 using TrialsSystem.UsersService.Infrastructure.Models.DeviceDtos;
+using TrialsSystem.UsersService.Api.Application.Device.Queries;
+using TrialsSystem.UsersService.Api.Application.Device.Commands;
 
 namespace TrialsSystem.UsersService.Api.Controllers.v1
 {

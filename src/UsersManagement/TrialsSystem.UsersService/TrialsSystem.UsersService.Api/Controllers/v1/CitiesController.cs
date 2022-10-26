@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using TrialsSystem.UsersService.Api.Application.Commands;
-using TrialsSystem.UsersService.Api.Application.Queries;
+using TrialsSystem.UsersService.Api.Application.City.Commands;
+using TrialsSystem.UsersService.Api.Application.City.Queries;
 using TrialsSystem.UsersService.Infrastructure.Models.CityDtos;
 
 namespace TrialsSystem.UsersService.Api.Controllers.v1

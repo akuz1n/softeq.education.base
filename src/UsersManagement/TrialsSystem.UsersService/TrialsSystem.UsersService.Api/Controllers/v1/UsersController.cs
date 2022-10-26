@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
 using MediatR;
-using TrialsSystem.UsersService.Api.Application.Commands;
-using TrialsSystem.UsersService.Api.Application.Queries;
 using TrialsSystem.UsersService.Api.Filters;
 using FluentValidation;
+using TrialsSystem.UsersService.Api.Application.User.Queries;
+using TrialsSystem.UsersService.Api.Application.User.Commands;
 
 namespace TrialsSystem.UsersService.Api.Controllers.v1
 {
