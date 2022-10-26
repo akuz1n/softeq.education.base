@@ -4,8 +4,6 @@ namespace TrialsSystem.UsersService.Domain.AggregatesModel.DeviceAggregate
 {
     internal class Device : Entity
     {
-        public string Id { get; set; }
-
         public string SerialNumber { get; set; }
 
         public string Model { get; set; }
