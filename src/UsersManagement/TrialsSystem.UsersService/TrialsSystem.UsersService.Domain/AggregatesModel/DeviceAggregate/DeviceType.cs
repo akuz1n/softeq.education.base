@@ -4,6 +4,6 @@ namespace TrialsSystem.UsersService.Domain.AggregatesModel.DeviceAggregate
 {
     internal class DeviceType : Entity
     {
-        public string Name { get; set; }
+        public string Name { get; private set; }
     }
 }
