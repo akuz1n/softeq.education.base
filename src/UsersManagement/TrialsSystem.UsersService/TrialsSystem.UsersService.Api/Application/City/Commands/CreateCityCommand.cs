@@ -5,7 +5,7 @@ namespace TrialsSystem.UsersService.Api.Application.City.Commands
 {
     public class CreateCityCommand : IRequest<CreateCityResponse>
     {
-        public string Name { get; set; }
+        public string Name { get; }
 
         public CreateCityCommand(string name)
         {

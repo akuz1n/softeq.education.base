@@ -10,6 +10,6 @@ namespace TrialsSystem.UsersService.Api.Application.User.Queries
             Id = id;
         }
 
-        public string Id { get; set; }
+        public string Id { get; }
     }
 }

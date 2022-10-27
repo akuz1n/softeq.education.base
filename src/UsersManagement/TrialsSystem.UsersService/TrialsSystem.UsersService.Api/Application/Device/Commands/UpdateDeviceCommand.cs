@@ -18,15 +18,15 @@ namespace TrialsSystem.UsersService.Api.Application.Device.Commands
             FirmwareVersion = firmwareVersion;
         }
 
-        public string Id { get; set; }
+        public string Id { get; }
 
-        public string SerialNumber { get; set; }
+        public string SerialNumber { get; }
 
-        public string Model { get; set; }
+        public string Model { get; }
 
-        public string TypeId { get; set; }
+        public string TypeId { get; }
 
-        public string FirmwareVersion { get; set; }
+        public string FirmwareVersion { get; }
 
 
     }

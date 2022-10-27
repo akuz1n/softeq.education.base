@@ -5,9 +5,9 @@ namespace TrialsSystem.UsersService.Api.Application.City.Commands
 {
     public class UpdateCityCommand : IRequest<UpdateCityResponse>
     {
-        public string Id { get; set; }
+        public string Id { get; }
 
-        public string Name { get; set; }
+        public string Name { get; }
 
         public UpdateCityCommand(string id, string name)
         {

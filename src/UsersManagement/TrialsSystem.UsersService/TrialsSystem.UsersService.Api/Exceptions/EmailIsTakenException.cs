@@ -2,7 +2,7 @@
 {
     public class EmailIsTakenException : Exception
     {
-        public string Email { get; set; }
+        public string Email { get; }
 
         public EmailIsTakenException(string email)
         {

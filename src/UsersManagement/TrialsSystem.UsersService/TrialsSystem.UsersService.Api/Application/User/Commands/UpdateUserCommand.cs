@@ -22,7 +22,7 @@ namespace TrialsSystem.UsersService.Api.Application.User.Commands
             Height = height;
         }
 
-        public string Id { get; set; }
+        public string Id { get; }
 
         public string Name { get; }
 

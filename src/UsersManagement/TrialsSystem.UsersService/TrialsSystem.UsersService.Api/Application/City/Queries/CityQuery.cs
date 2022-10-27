@@ -5,7 +5,7 @@ namespace TrialsSystem.UsersService.Api.Application.City.Queries
 {
     public class CityQuery : IRequest<GetCityResponse>
     {
-        public string Id { get; set; }
+        public string Id { get; }
 
         public CityQuery(string id)
         {

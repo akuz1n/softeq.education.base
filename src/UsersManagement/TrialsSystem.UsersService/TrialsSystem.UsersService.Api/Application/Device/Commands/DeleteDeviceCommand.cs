@@ -9,7 +9,7 @@ namespace TrialsSystem.UsersService.Api.Application.Device.Commands
             Id = id;
         }
 
-        public string Id { get; set; }
+        public string Id { get; }
 
     }
 }
