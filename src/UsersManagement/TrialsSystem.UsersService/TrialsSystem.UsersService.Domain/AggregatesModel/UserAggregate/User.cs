@@ -26,12 +26,12 @@ namespace TrialsSystem.UsersService.Domain.AggregatesModel.UserAggregate
 
         public string Surname { get; private set; }
 
-        private string CityId { get; private set; }
+        private string CityId { get; set; }
 
         [ForeignKey("CityId")]
         public virtual City City { get; private set; }
 
-        private string GenderId { get; private set; }
+        private string GenderId { get; set; }
 
         [ForeignKey("GenderId")]
         public virtual Gender Gender { get; private set; }
