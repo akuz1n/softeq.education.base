@@ -5,11 +5,11 @@ namespace TrialsSystem.UserTasksService.Api.Application.UserTask.Commands
 {
     public class CreateUserTaskCommand : IRequest<CreateUserTaskResponse>
     {
-        public string Name { get; set; }
+        public string Name { get; }
 
-        public string Status { get; set; }
+        public string Status { get; }
 
-        public Dictionary<string, string> AdditionalProperties { get; set; }
+        public Dictionary<string, string> AdditionalProperties { get; }
 
         public CreateUserTaskCommand(string name,
             string status,

@@ -5,7 +5,7 @@ namespace TrialsSystem.UserTasksService.Api.Application.UserTask.Queries
 {
     public class UserTaskQuery : IRequest<GetUserTaskResponse>
     {
-        public string Id { get; set; }
+        public string Id { get; }
 
         public UserTaskQuery(string id)
         {
